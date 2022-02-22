@@ -1,5 +1,0 @@
-While this book is written for 12+ year old kids, adults looking for an easy intro to
-Java may find this book useful as well. In the book you’ll be using the same tools used
-by professional programmers. As a bonus, the last chapter will teach you how to publish
-your code on the Web on a super popular site called GitHub. Millions of programmers share
-their programs there, and you should too.
