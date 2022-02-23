@@ -10,37 +10,37 @@ if __name__ == '__main__':
     kv = 0.1
 
     # нормальное распределение
-    # selectionNormalDistribution = list(np.random.normal(loc=mo, scale=1000, size=n))
-    # averageN = stat.mean(selectionNormalDistribution)
-    # varianceN = stat.variance(selectionNormalDistribution)
-    #
-    # standardDeviationN = m.sqrt(varianceN)
-    #
-    # sigmaN = (1.96 * standardDeviationN) / (m.sqrt(n))
-    # x1N = averageN - sigmaN
-    # x2N = averageN + sigmaN
-    # print('----- Нормальный закон -----')
-    # print('m =', mo, '(мат ожидание)')
-    # print('kv =', kv, '(коэффициент вариации)')
-    # print('n =', n, '(размер выборки)')
-    # print('Оценка мат ожидания\n', round(averageN, 3), sep='')
-    # print('Оценка дисперсии\n', round(varianceN, 3), sep='')
-    # print('Оценка среднеквадратического отклонения\n', round(standardDeviationN, 3), sep='')
-    # print('Интервальная оценка математического ожидания\n', '(', round(x1N, 3), ', ', round(x2N, 3), ')', sep='')
-    # print('Точечная оценка математического ожидания\n', round((x1N + x2N) / 2, 3), sep='')
-    # print('\n', '\n')
-    #
-    # minN = m.ceil(min(selectionNormalDistribution) / 1000) * 1000
-    # maxN = m.floor(max(selectionNormalDistribution) / 1000) * 1000
-    #
-    # frequencyN = [i for i in range(minN, maxN, 200)]
-    #
-    # graphN = plt
-    # graphN.hist(selectionNormalDistribution, bins=frequencyN, edgecolor='white')
-    # graphN.title('Нормальный закон')
-    # graphN.xlabel('')
-    # graphN.ylabel('Частота')
-    # graphN.show()
+    selectionNormalDistribution = list(np.random.normal(loc=mo, scale=1000, size=n))
+    averageN = stat.mean(selectionNormalDistribution)
+    varianceN = stat.variance(selectionNormalDistribution)
+
+    standardDeviationN = m.sqrt(varianceN)
+
+    sigmaN = (1.96 * standardDeviationN) / (m.sqrt(n))
+    x1N = averageN - sigmaN
+    x2N = averageN + sigmaN
+    print('----- Нормальный закон -----')
+    print('m =', mo, '(мат ожидание)')
+    print('kv =', kv, '(коэффициент вариации)')
+    print('n =', n, '(размер выборки)')
+    print('Оценка мат ожидания\n', round(averageN, 3), sep='')
+    print('Оценка дисперсии\n', round(varianceN, 3), sep='')
+    print('Оценка среднеквадратического отклонения\n', round(standardDeviationN, 3), sep='')
+    print('Интервальная оценка математического ожидания\n', '(', round(x1N, 3), ', ', round(x2N, 3), ')', sep='')
+    print('Точечная оценка математического ожидания\n', round((x1N + x2N) / 2, 3), sep='')
+    print('\n', '\n')
+
+    minN = m.ceil(min(selectionNormalDistribution) / 1000) * 1000
+    maxN = m.floor(max(selectionNormalDistribution) / 1000) * 1000
+
+    frequencyN = [i for i in range(minN, maxN, 200)]
+
+    graphN = plt
+    graphN.hist(selectionNormalDistribution, bins=frequencyN, edgecolor='white')
+    graphN.title('Нормальный закон')
+    graphN.xlabel('')
+    graphN.ylabel('Частота')
+    graphN.show()
 
     # логарифмически нормальное распределение
     selectionLogarithmicallyNormalDistribution = []
