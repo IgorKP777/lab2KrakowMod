@@ -4,6 +4,15 @@ import numpy as np
 import statistics as stat
 from matplotlib import pyplot as plt
 
+
+def normal():
+    pass
+
+
+def log_normal():
+    pass
+
+
 if __name__ == '__main__':
     n = 10000
     mo = 10000
