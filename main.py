@@ -3,17 +3,11 @@ import math as m
 import numpy as np
 import statistics as stat
 from matplotlib import pyplot as plt
-
-
-def normal():
-    pass
-
-
-def log_normal():
-    pass
+from prettytable import PrettyTable as pt
 
 
 if __name__ == '__main__':
+
     n = 10000
     mo = 10000
     kv = 0.1
@@ -28,16 +22,20 @@ if __name__ == '__main__':
     sigmaN = (1.96 * standardDeviationN) / (m.sqrt(n))
     x1N = averageN - sigmaN
     x2N = averageN + sigmaN
-    print('----- Нормальный закон -----')
-    print('m =', mo, '(мат ожидание)')
-    print('kv =', kv, '(коэффициент вариации)')
-    print('n =', n, '(размер выборки)')
-    print('Оценка мат ожидания\n', round(averageN, 3), sep='')
-    print('Оценка дисперсии\n', round(varianceN, 3), sep='')
-    print('Оценка среднеквадратического отклонения\n', round(standardDeviationN, 3), sep='')
-    print('Интервальная оценка математического ожидания\n', '(', round(x1N, 3), ', ', round(x2N, 3), ')', sep='')
-    print('Точечная оценка математического ожидания\n', round((x1N + x2N) / 2, 3), sep='')
-    print('\n', '\n')
+    table_result = pt()
+    table_result.title = 'Нормальный закон'
+    table_result.field_names = ['Параметры оценки', 'Результат']
+    table_result.add_row(['m', mo])
+    table_result.add_row(['kv', kv])
+    table_result.add_row(['n', n])
+    table_result.add_row(['Оценка мат ожидания', round(averageN, 3)])
+    table_result.add_row(['Оценка дисперсии', round(varianceN, 3)])
+    table_result.add_row(['Оценка среднеквадратического отклонения', round(standardDeviationN, 3)])
+    table_result.add_row(
+        ['Интервальная оценка математического ожидания', '(' + str(round(x1N, 3)) + ', ' + str(round(x2N, 3)) + ')'])
+    table_result.add_row(['Точечная оценка математического ожидания', round((x1N + x2N) / 2, 3)])
+    print(table_result)
+    print('\n')
 
     minN = m.ceil(min(selectionNormalDistribution) / 1000) * 1000
     maxN = m.floor(max(selectionNormalDistribution) / 1000) * 1000
@@ -72,15 +70,20 @@ if __name__ == '__main__':
     sigmaL = (1.96 * standardDeviationL) / (m.sqrt(n))
     x1L = averageL - sigmaL
     x2L = averageL + sigmaL
-    print('----- Логарифмически - нормальное распределение -----')
-    print('m =', mo, 'мат ожидание')
-    print('kv =', kv, 'коэффициент вариации')
-    print('n =', n, 'размер выборки')
-    print('оценка мат ожидания\n', round(averageL, 3))
-    print('оценка дисперсии\n', round(varianceL, 3))
-    print('оценка среднеквадратического отклонения\n', round(standardDeviationL, 3))
-    print('интервальная оценка математического ожидания\n', '(', round(x1L, 3), ',', round(x2L, 3), ')')
-    print('точечная оценка математического ожидания\n', round((x1L + x2L) / 2, 3))
+
+    table_resultL = pt()
+    table_resultL.title = 'Логарифмически - нормальное распределение'
+    table_resultL.field_names = ['Параметры оценки', 'Результат']
+    table_resultL.add_row(['m', mo])
+    table_resultL.add_row(['kv', kv])
+    table_resultL.add_row(['n', n])
+    table_resultL.add_row(['Оценка мат ожидания', round(averageL, 3)])
+    table_resultL.add_row(['Оценка дисперсии', round(varianceL, 3)])
+    table_resultL.add_row(['Оценка среднеквадратического отклонения', round(standardDeviationL, 3)])
+    table_resultL.add_row(
+        ['Интервальная оценка математического ожидания', '(' + str(round(x1L, 3)) + ', ' + str(round(x2L, 3)) + ')'])
+    table_resultL.add_row(['Точечная оценка математического ожидания', round((x1L + x2L) / 2, 3)])
+    print(table_resultL)
 
     minL = m.floor(min(selectionLogarithmicallyNormalDistribution) / 1000) * 1000
     maxL = m.ceil(max(selectionLogarithmicallyNormalDistribution) / 1000) * 1000

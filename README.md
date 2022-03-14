@@ -6,5 +6,4 @@
 ![image](https://user-images.githubusercontent.com/71080554/157378816-5e40f0dc-4b15-4fcc-bd88-36256da03f0a.png)
 ![image](https://user-images.githubusercontent.com/71080554/157378851-fb890341-1e67-4bb3-b4bb-5fe8388fe1ca.png)
 ## Результат
-![image](https://user-images.githubusercontent.com/71080554/157379085-7fa3d78f-4ffa-427e-a5a6-6141e4d3392e.png)
-![image](https://user-images.githubusercontent.com/71080554/157379111-e8bb0f8a-65f9-47f4-add5-62d20c3e381f.png)
+![img.png](img.png)
